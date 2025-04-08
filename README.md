@@ -4,6 +4,18 @@ API containing backend logic to handle moisture readings from sensors across my 
 ## Requirements
 - Python 3.10.8+
 
+## Endpoints
+
+### POST input_reading/
+
+The following query must be made for the `input_reading/` command:
+
+`<origin>api/v1/input_reading/?moisture_level=<moisture level value>`
+
+The following headers must be provided:
+- `Plant-ID`
+- `Authorization`: Value must be: `API-Key <API key value>`
+
 ## Creating and Starting a Virtual Environment
 
 Best way to download the required python packages and run the app locally is to start a virtual environment
