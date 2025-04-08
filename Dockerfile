@@ -7,10 +7,6 @@ COPY . /app
 # Install the required packages
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Run DB creation and load scripts
-RUN python manage.py makemigrations
-RUN python manage.py migrate
-
 # Expose port 8000 for the development server to listen on
 EXPOSE 8000
 # Run the development server
