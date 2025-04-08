@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from config import ORIGIN
+import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-e-4=l#5htfn85e%)cl2g17zh&d&8hpgg4n30c_k8vawyu@abg5
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ORIGIN,
+    config.ORIGIN,
     "127.0.0.1",
     "localhost",
     "0.0.0.0",
@@ -87,9 +87,13 @@ WSGI_APPLICATION = 'house_plant_hub_api.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config.DB_NAME,
+        "USER": config.USER,
+        "PASSWORD": config.PASSWORD,
+        "HOST": config.HOST,
+        "PORT": 5432,
     }
 }
 
@@ -135,12 +139,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = [f"http://{ORIGIN}:3000"]
+CSRF_TRUSTED_ORIGINS = [f"http://{config.ORIGIN}:3000"]
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOWED_ORIGINS = [f"http://{ORIGIN}:3000"]
+CORS_ALLOWED_ORIGINS = [f"http://{config.ORIGIN}:3000"]
 
-CSRF_COOKIE_DOMAIN = {ORIGIN}
+CSRF_COOKIE_DOMAIN = {config.ORIGIN}
 
 CORS_ALLOW_HEADERS = ["Content-Type", "X-CSRFToken", "Access-Control-Allow-Credentials", "Plant-ID"]
