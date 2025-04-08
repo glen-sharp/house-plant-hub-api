@@ -2,8 +2,12 @@ from rest_framework.decorators import api_view
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import status
+import logging
 
 from house_plant_hub_backend import serializers
+
+
+logger = logging.getLogger("root")
 
 
 @api_view(["POST"])
@@ -38,6 +42,7 @@ def input_reading(request: Request) -> Response:
             status=status.HTTP_200_OK,
         )
     else:
+        logger.error(moisture_reading_serializer.errors)
         return Response(
             {"message": "Bad Request"},
             status=status.HTTP_400_BAD_REQUEST,
