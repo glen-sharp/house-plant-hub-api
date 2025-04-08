@@ -1,6 +1,6 @@
 services:
   api:
-    container_name: emission-api
+    container_name: house-plant-hub-api
     environment:
       - ORIGIN=${ORIGIN:-localhost}
     build: .
