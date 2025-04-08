@@ -19,6 +19,8 @@ django-extensions = "3.2.3"
 PyJWT = "2.4.0"
 pytz = "2021.1"
 flake8 = "7.0.0"
+psycopg2-binary = "2.9.10"
+djangorestframework-api-key = "3.1.0"
 
 
 [tool.mypy]

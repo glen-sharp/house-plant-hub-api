@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "house_plant_hub_backend",
     "django_extensions",
     "corsheaders",
+    "rest_framework_api_key",
 ]
 
 MIDDLEWARE = [

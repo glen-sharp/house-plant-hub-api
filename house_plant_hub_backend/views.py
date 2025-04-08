@@ -1,7 +1,8 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework_api_key.permissions import HasAPIKey
 import logging
 
 from house_plant_hub_backend import serializers
@@ -11,6 +12,7 @@ logger = logging.getLogger("root")
 
 
 @api_view(["POST"])
+@permission_classes([HasAPIKey])
 def input_reading(request: Request) -> Response:
     """
     API view to ingest moisture data to database
