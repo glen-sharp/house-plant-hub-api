@@ -6,3 +6,5 @@ PyJWT==2.4.0
 pytz==2021.1
 flake8==7.0.0
 psycopg2==2.9.10
+psycopg-binary==3.2.6
+psycopg-pool==3.2.6
