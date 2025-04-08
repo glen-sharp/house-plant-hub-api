@@ -1,0 +1,8 @@
+services:
+  api:
+    container_name: emission-api
+    environment:
+      - ORIGIN=${ORIGIN:-localhost}
+    build: .
+    ports:
+      - 8000:8000
