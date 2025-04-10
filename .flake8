@@ -6,3 +6,4 @@ inline-quotes = double
 exclude =
     .venv
     venv
+    house_plant_hub_backend/migrations/*
