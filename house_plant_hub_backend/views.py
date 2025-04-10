@@ -19,7 +19,7 @@ def readings(request: Request) -> Response:
 
     serializer = serializers.PlantSerializer(plants, many=True)
 
-    return Response({"moisture_readings": serializer.data})
+    return Response({"plants_array": serializer.data})
 
 
 @api_view(["POST"])

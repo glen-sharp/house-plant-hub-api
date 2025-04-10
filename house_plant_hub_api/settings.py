@@ -63,6 +63,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "house_plant_hub_api.middleware.auth_middleware",
 ]
 
 ROOT_URLCONF = "house_plant_hub_api.urls"
