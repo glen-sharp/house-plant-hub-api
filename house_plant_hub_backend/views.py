@@ -5,10 +5,21 @@ from rest_framework import status
 from rest_framework_api_key.permissions import HasAPIKey
 import logging
 
-from house_plant_hub_backend import serializers
-
+from house_plant_hub_backend import serializers, models
 
 logger = logging.getLogger("root")
+
+
+@api_view(["GET"])
+def readings(request: Request) -> Response:
+    """
+    API view to return plant moisture readings to client
+    """
+    plants = models.Plant.objects.filter().all()
+
+    serializer = serializers.PlantSerializer(plants, many=True)
+
+    return Response({"moisture_readings": serializer.data})
 
 
 @api_view(["POST"])

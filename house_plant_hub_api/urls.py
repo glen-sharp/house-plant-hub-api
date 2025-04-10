@@ -5,8 +5,9 @@ from django.conf.urls import include
 from house_plant_hub_backend import views
 
 urls = [
-    path('admin/', admin.site.urls),
-    path('input_reading/', views.input_reading, name="input_reading")
+    path("admin/", admin.site.urls),
+    path("input_reading/", views.input_reading, name="input_reading"),
+    path("readings/", views.readings, name="readings"),
 ]
 
 urlpatterns = [path("api/v1/", include(urls))]
