@@ -12,6 +12,7 @@ def auth_middleware(get_response):
                 request.path not in [
                     "/api/v1/register/",
                     "/api/v1/auth/login/",
+                    "/api/v1/input_reading/",
                 ]
             )
             and
