@@ -9,5 +9,5 @@ USERNAME = os.environ.get("USERNAME", "pi4b")
 PASSWORD = os.environ.get("PASSWORD", "password")
 HOST = os.environ.get("HOST", "192.168.0.152")
 
-FULL_MOISTURE_LEVEL = 310
+FULL_MOISTURE_LEVEL = 250
 NO_MOISTURE_LEVEL = 790
