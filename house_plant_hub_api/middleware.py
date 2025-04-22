@@ -19,6 +19,10 @@ def auth_middleware(get_response):
             (
                 "test" not in sys.argv
             )
+            and
+            (
+                "/api/v1/admin" not in request.path
+            )
         ):
             # Renders request
             response = Response(
