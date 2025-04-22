@@ -9,6 +9,7 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=pi4b
       - POSTGRES_DB=house-plant-hub
+    restart: always
   api:
     container_name: house-plant-hub-api
     environment:
@@ -18,5 +19,6 @@ services:
       - PASSWORD=password
       - HOST=${ORIGIN:-localhost}
     build: .
+    restart: always
     ports:
       - 8000:8000
