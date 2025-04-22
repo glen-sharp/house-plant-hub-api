@@ -16,6 +16,27 @@ The following headers must be provided:
 - `Plant-ID`
 - `Authorization`: Value must be: `API-Key <API key value>`
 
+### GET readings/
+
+The following endpoint returns the transformed meter readings for different plants in the following format:
+
+```python
+{
+    "plants_array": [
+        {
+            "id": <plant ID>,
+            "plant_name": "<name of plant>",
+            "room_name": "<Room where plant is located>",
+            "room_location": "<location of plant in room>",
+            "moisture_percentage": <moisture percentage using config values in config.py>
+        }
+        .
+        .
+        .
+    ]
+}
+```
+
 ## Creating and Starting a Virtual Environment
 
 Best way to download the required python packages and run the app locally is to start a virtual environment
@@ -37,7 +58,7 @@ poetry install
 
 Run locally:
 ```bash
-./manage.py runserver 0.0.0.0:800
+./manage.py runserver 0.0.0.0:8000
 ```
 
 ## Running Static Analysis
