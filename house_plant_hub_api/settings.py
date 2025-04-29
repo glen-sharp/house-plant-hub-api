@@ -143,11 +143,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CSRF_TRUSTED_ORIGINS = [f"http://{config.ORIGIN}:3000"]
+CSRF_TRUSTED_ORIGINS = [f"http://{config.ORIGIN}:3000", "http://plant-hub.glen-sharp.uk"]
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOWED_ORIGINS = [f"http://{config.ORIGIN}:3000"]
+CORS_ALLOWED_ORIGINS = [f"http://{config.ORIGIN}:3000", "http://plant-hub.glen-sharp.uk"]
 
 CSRF_COOKIE_DOMAIN = {config.ORIGIN}
 
