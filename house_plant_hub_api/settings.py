@@ -149,6 +149,6 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [f"http://{config.ORIGIN}:3000", "http://plant-hub.glen-sharp.uk"]
 
-CSRF_COOKIE_DOMAIN = {config.ORIGIN}
+CSRF_COOKIE_DOMAIN = {"http://plant-hub.glen-sharp.uk"}
 
 CORS_ALLOW_HEADERS = ["Content-Type", "X-CSRFToken", "Access-Control-Allow-Credentials", "Plant-ID"]
