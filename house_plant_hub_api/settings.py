@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     "192.168.0.148",
     "192.168.0.152",
     "192.168.0.153",
+    "houseplant-hub.glen-sharp.uk"
 ]
 
 
