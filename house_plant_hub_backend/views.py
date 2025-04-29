@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_api_key.permissions import HasAPIKey
 import logging
+import datetime
 
 from house_plant_hub_backend import serializers, models
 
@@ -20,6 +21,33 @@ def readings(request: Request) -> Response:
     serializer = serializers.PlantSerializer(plants, many=True)
 
     return Response({"plants_array": serializer.data})
+
+
+@api_view(["GET"])
+def reading_history(request: Request) -> Response:
+    """
+    API to return previous moisture data for specific plants
+    """
+    try:
+        plant_id = request.GET["plant_id"]
+    except KeyError:
+        return Response(
+            {"message": "Bad Request: Must include 'plant_id' in query parameters"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    date = datetime.datetime.now().date() - datetime.timedelta(days=30)
+
+    readings = models.MoistureReading.objects.filter(
+        reading_datetime__gte=date,
+        plant=plant_id,
+    ).all()
+
+    serializer = serializers.ReadingHistoryMoistureSerializer(readings, many=True)
+
+    data = serializer.data
+
+    return Response({"moisture_readings": data})
 
 
 @api_view(["POST"])

@@ -12,6 +12,7 @@ urls = [
     path("auth/logout/", auth_views.user_logout, name="logout"),
     path("input_reading/", views.input_reading, name="input_reading"),
     path("readings/", views.readings, name="readings"),
+    path("reading_history/", views.reading_history, name="reading_history"),
 ]
 
 urlpatterns = [path("api/v1/", include(urls))]
