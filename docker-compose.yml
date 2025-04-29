@@ -17,7 +17,7 @@ services:
       - DB_NAME=house-plant-hub
       - USER=pi4b
       - PASSWORD=password
-      - HOST=${ORIGIN:-localhost}
+      - HOST=192.168.0.152
     build: .
     restart: always
     ports:
