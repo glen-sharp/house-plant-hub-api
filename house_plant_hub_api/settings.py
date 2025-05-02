@@ -34,7 +34,7 @@ ALLOWED_HOSTS = [
     "192.168.0.148",
     "192.168.0.152",
     "192.168.0.153",
-    "houseplant-hub-api.glen-sharp.uk"
+    "houseplant-hub-api.glen-sharp.uk",
 ]
 
 
@@ -144,7 +144,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CSRF_TRUSTED_ORIGINS = [f"http://{config.ORIGIN}:3000", "https://houseplant-hub.glen-sharp.uk"]
+CSRF_TRUSTED_ORIGINS = [
+    f"http://{config.ORIGIN}:3000",
+    "https://houseplant-hub.glen-sharp.uk",
+    "https://houseplant-hub-api.glen-sharp.uk",
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
