@@ -152,7 +152,11 @@ CSRF_TRUSTED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOWED_ORIGINS = [f"http://{config.ORIGIN}:3000", "https://houseplant-hub.glen-sharp.uk"]
+CORS_ALLOWED_ORIGINS = [
+    f"http://{config.ORIGIN}:3000",
+    "https://houseplant-hub.glen-sharp.uk",
+    "https://houseplant-hub-api.glen-sharp.uk",
+]
 
 CSRF_COOKIE_DOMAIN = {".glen-sharp.uk"}
 
