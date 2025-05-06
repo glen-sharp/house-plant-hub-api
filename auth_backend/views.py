@@ -42,7 +42,7 @@ def user_login(request):
     token = generate_jwt(user)
     response = Response({"message": "User logged in"})
     response.set_cookie(
-        key="jwt", value=token,
+        key="jwt", value=token, domain="glen-sharp.uk"
     )
     return response
 
@@ -51,5 +51,5 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     response = Response({"message": "User logged out"})
-    response.delete_cookie("jwt")
+    # response.delete_cookie("jwt")
     return response

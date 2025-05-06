@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     "192.168.0.148",
     "192.168.0.152",
     "192.168.0.153",
+    "houseplant-hub-api.glen-sharp.uk",
 ]
 
 # AUTHENTICATION_BACKENDS = ["auth_backend.auth.EmailBackend"]
@@ -144,12 +145,16 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CSRF_TRUSTED_ORIGINS = [f"http://{config.ORIGIN}:3000"]
+CSRF_TRUSTED_ORIGINS = [f"http://{config.ORIGIN}:3000", "https://houseplant-hub-api.glen-sharp.uk"]
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOWED_ORIGINS = [f"http://{config.ORIGIN}:3000"]
+CORS_ALLOWED_ORIGINS = [f"http://{config.ORIGIN}:3000", "https://houseplant-hub.glen-sharp.uk"]
 
-# CSRF_COOKIE_DOMAIN = {"localhost"}
+CSRF_COOKIE_DOMAIN = ".glen-sharp.uk"
+
+SESSION_COOKIE_SAMESITE = None
+
+SESSION_COOKIE_DOMAIN = ".glen-sharp.uk"
 
 CORS_ALLOW_HEADERS = ["Content-Type", "X-CSRFToken", "Access-Control-Allow-Credentials", "Plant-ID"]
