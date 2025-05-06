@@ -2,7 +2,7 @@ import os
 
 LOG_LEVEL = "INFO"
 
-ORIGIN = os.environ.get("ORIGIN", "localhost")
+ORIGIN = os.environ.get("ORIGIN", "192.168.0.152")
 
 DB_NAME = os.environ.get("DB_NAME", "house-plant-hub")
 USERNAME = os.environ.get("USERNAME", "pi4b")
