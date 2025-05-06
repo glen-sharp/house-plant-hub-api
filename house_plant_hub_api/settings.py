@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     "192.168.0.153",
 ]
 
+# AUTHENTICATION_BACKENDS = ["auth_backend.auth.EmailBackend"]
 
 # Application definition
 
@@ -149,6 +150,6 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [f"http://{config.ORIGIN}:3000"]
 
-CSRF_COOKIE_DOMAIN = {config.ORIGIN}
+# CSRF_COOKIE_DOMAIN = {"localhost"}
 
 CORS_ALLOW_HEADERS = ["Content-Type", "X-CSRFToken", "Access-Control-Allow-Credentials", "Plant-ID"]
