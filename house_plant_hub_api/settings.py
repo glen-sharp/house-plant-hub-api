@@ -158,6 +158,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://houseplant-hub-api.glen-sharp.uk",
 ]
 
-CSRF_COOKIE_DOMAIN = {".glen-sharp.uk"}
+CSRF_COOKIE_DOMAIN = {config.ORIGIN}
 
 CORS_ALLOW_HEADERS = ["Content-Type", "X-CSRFToken", "Access-Control-Allow-Credentials", "Plant-ID"]
