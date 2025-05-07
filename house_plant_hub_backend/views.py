@@ -36,12 +36,12 @@ def reading_history(request: Request) -> Response:
             status=status.HTTP_400_BAD_REQUEST,
         )
 
-    date = datetime.datetime.now().date() - datetime.timedelta(days=30)
+    date = datetime.datetime.now().date() - datetime.timedelta(days=4)
 
     readings = models.MoistureReading.objects.filter(
         reading_datetime__gte=date,
         plant=plant_id,
-    ).all()
+    ).all().order_by("reading_datetime")
 
     serializer = serializers.ReadingHistoryMoistureSerializer(readings, many=True)
 
