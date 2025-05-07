@@ -145,7 +145,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CSRF_TRUSTED_ORIGINS = [f"http://{config.ORIGIN}:3000", "https://houseplant-hub-api.glen-sharp.uk"]
+CSRF_TRUSTED_ORIGINS = [
+    f"http://{config.ORIGIN}:3000",
+    "https://houseplant-hub-api.glen-sharp.uk",
+    "https://houseplant-hub.glen-sharp.uk",
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
