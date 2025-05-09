@@ -8,7 +8,7 @@ jobs:
   api-build:
     runs-on: ubuntu-latest
     steps:
-      - name: test
+      - name: test command
         run: echo "$(ls)"
     # - name: Build docker image
     #   run: COMPOSE_BAKE=true docker compose build
