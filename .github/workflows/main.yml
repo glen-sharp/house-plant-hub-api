@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: test command
+      - name: Build image
         run: COMPOSE_BAKE=true docker compose build
+      - name: Run image
+        run: ORIGIN=houseplant-hub.glen-sharp.uk docker compose up -d
