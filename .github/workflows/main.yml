@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test command
-        run: echo "$(ls)"
+        run: docker run hello-world
     # - name: Build docker image
     #   run: COMPOSE_BAKE=true docker compose build
     # - name: Run docker image
