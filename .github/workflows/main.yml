@@ -10,8 +10,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: test command
-        run: docker build .
-    # - name: Build docker image
-    #   run: COMPOSE_BAKE=true docker compose build
-    # - name: Run docker image
-    #   run: ORIGIN=houseplant-hub.glen-sharp.uk docker compose up -d
+        run: COMPOSE_BAKE=true docker compose build
