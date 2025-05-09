@@ -1,15 +1,15 @@
 name: Containerise and run API code
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  build:
+  api:
     runs-on: self-hosted
     steps:
-      - name: test
-        run: echo "$(ls)"
-    # - name: Build docker image
-    #   run: COMPOSE_BAKE=true docker compose build
-    # - name: Run docker image
-    #   run: ORIGIN=houseplant-hub.glen-sharp.uk docker compose up -d
+      - uses: actions/checkout@v3
+      - name: Build image
+        run: COMPOSE_BAKE=true docker compose build
+      - name: Run image
+        run: ORIGIN=houseplant-hub.glen-sharp.uk docker compose up -d
