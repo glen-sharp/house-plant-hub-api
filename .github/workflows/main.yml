@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  buld:
+  build:
     runs-on: self-hosted
     steps:
     - name: Build docker image
