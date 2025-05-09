@@ -2,7 +2,7 @@ name: Containerise and run API code
 on:
   push:
     branches:
-      - feat/runner-test
+      - "feat/runner-test"
 
 jobs:
   api-build:
