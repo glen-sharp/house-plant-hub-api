@@ -44,11 +44,15 @@ def reading_history(request: Request) -> Response:
         plant=plant_id,
     ).all().order_by("reading_datetime")
 
+    plant_name = models.Plant.objects.get(id=plant_id).plant_name
+
+    print(plant_name)
+
     serializer = serializers.ReadingHistoryMoistureSerializer(readings, many=True)
 
     data = serializer.data
 
-    return Response({"moisture_readings": data})
+    return Response({"plant_name": plant_name, "moisture_readings": data})
 
 
 @api_view(["POST"])
