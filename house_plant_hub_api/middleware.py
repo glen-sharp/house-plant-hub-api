@@ -13,7 +13,7 @@ def auth_middleware(get_response):
                     "/api/v1/register/",
                     "/api/v1/auth/login/",
                     "/api/v1/input_reading/",
-                    "/favicon.ico/"
+                    "/favicon.ico/",
                 ]
             )
             and

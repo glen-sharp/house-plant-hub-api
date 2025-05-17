@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 import jwt
 import datetime
 from django.db import IntegrityError
+from django.contrib.auth import get_user_model
 
 from auth_backend.serializer import UserRegistrationSerializer
 
@@ -34,10 +35,13 @@ def register_user(request):
 
 @api_view(["POST"])
 def user_login(request):
-    # if not request.user.is_authenticated:
-    user = authenticate(username=request.data["email"], password=request.data["password"])
-    if not user:
-        return Response({"message": "User does not exist"}, status=status.HTTP_403_FORBIDDEN)
+    try:
+        user = authenticate(username=request.data["email"], password=request.data["password"])
+    except get_user_model().DoesNotExist:
+        return Response({"message": "Incorrect email"}, status=status.HTTP_403_FORBIDDEN)
+    except ValueError:
+        return Response({"message": "Incorrect password"}, status=status.HTTP_403_FORBIDDEN)
+
     login(request, user)
     token = generate_jwt(user)
     response = Response({"message": "User logged in"})
@@ -51,5 +55,5 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     response = Response({"message": "User logged out"})
-    # response.delete_cookie("jwt")
+    response.delete_cookie("jwt")
     return response

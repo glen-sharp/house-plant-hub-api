@@ -37,7 +37,7 @@ ALLOWED_HOSTS = [
     "houseplant-hub-api.glen-sharp.uk",
 ]
 
-# AUTHENTICATION_BACKENDS = ["auth_backend.auth.EmailBackend"]
+AUTHENTICATION_BACKENDS = ["auth_backend.auth.EmailBackend"]
 
 # Application definition
 
