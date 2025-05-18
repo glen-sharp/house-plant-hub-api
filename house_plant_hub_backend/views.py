@@ -46,8 +46,6 @@ def reading_history(request: Request) -> Response:
 
     plant_name = models.Plant.objects.get(id=plant_id).plant_name
 
-    print(plant_name)
-
     serializer = serializers.ReadingHistoryMoistureSerializer(readings, many=True)
 
     data = serializer.data
