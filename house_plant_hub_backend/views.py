@@ -17,7 +17,7 @@ def readings(request: Request) -> Response:
     """
     API view to return plant moisture readings to client
     """
-    plants = models.Plant.objects.filter().all()
+    plants = models.Plant.objects.filter().all().order_by("id")
 
     serializer = serializers.PlantSerializer(plants, many=True)
 
@@ -44,13 +44,17 @@ def reading_history(request: Request) -> Response:
         plant=plant_id,
     ).all().order_by("reading_datetime")
 
-    plant_name = models.Plant.objects.get(id=plant_id).plant_name
+    plant_obj = models.Plant.objects.get(id=plant_id)
 
     serializer = serializers.ReadingHistoryMoistureSerializer(readings, many=True)
 
     data = serializer.data
 
-    return Response({"plant_name": plant_name, "moisture_readings": data})
+    return Response({
+        "plant_name": plant_obj.plant_name,
+        "image_url": plant_obj.image_url,
+        "moisture_readings": data
+    })
 
 
 @api_view(["POST"])

@@ -24,7 +24,8 @@ class PlantSerializer(serializers.ModelSerializer):
             "plant_name",
             "room_name",
             "room_location",
-            "moisture_percentage"
+            "moisture_percentage",
+            "image_url"
         ]
 
     def get_latest_moisture_percentage(self, plant):
