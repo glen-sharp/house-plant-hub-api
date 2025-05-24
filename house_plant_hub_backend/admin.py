@@ -11,3 +11,5 @@ class PlantAdmin(admin.ModelAdmin):
 @admin.register(models.MoistureReading)
 class MoistureReadingAdmin(admin.ModelAdmin):
     list_display = models.MoistureReading.DisplayFields
+
+    search_fields = ["reading_datetime", "plant"]
