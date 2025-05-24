@@ -18,7 +18,7 @@ class MoistureReading(models.Model):
     reading_datetime = models.DateTimeField(verbose_name="Moisture Reading DateTime", auto_now=True)
     plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
 
-    DisplayFields = ["moisture_level", "reading_datetime", "plant"]
+    DisplayFields = ["moisture_level", "reading_datetime", "plant__plant_name"]
 
     class Meta:
         verbose_name_plural = "Moisture Readings"

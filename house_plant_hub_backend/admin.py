@@ -12,4 +12,4 @@ class PlantAdmin(admin.ModelAdmin):
 class MoistureReadingAdmin(admin.ModelAdmin):
     list_display = models.MoistureReading.DisplayFields
 
-    search_fields = ["plant"]
+    search_fields = ["plant__plant_name"]
