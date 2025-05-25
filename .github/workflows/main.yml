@@ -12,4 +12,4 @@ jobs:
       - name: Build image
         run: COMPOSE_BAKE=true docker compose build
       - name: Run container
-        run: ORIGIN=houseplant-hub.glen-sharp.uk docker compose up -d
+        run: ORIGIN=${{ secrets.SECRET_KEY }} docker compose up -d
