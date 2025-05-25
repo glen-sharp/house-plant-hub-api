@@ -12,4 +12,4 @@ jobs:
       - name: Build image
         run: COMPOSE_BAKE=true docker compose build
       - name: Run container
-        run: SECRET_KEY=django-insecure-e-4=l#5htfn85e%)cl2g17zh&d&8hpgg4n30c_k8vawyu@abg5 docker compose up -d
+        run: SECRET_KEY='django-insecure-e-4=l#5htfn85e%)cl2g17zh&d&8hpgg4n30c_k8vawyu@abg5' docker compose up -d

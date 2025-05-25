@@ -13,7 +13,7 @@ services:
   api:
     container_name: house-plant-hub-api
     environment:
-      - ORIGIN=${ORIGIN:-localhost}
+      - SECRET_KEY=${SECRET_KEY}
       - DB_NAME=house-plant-hub
       - USER=pi4b
       - PASSWORD=password
