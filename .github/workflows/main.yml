@@ -12,4 +12,6 @@ jobs:
       - name: Build image
         run: COMPOSE_BAKE=true docker compose build
       - name: Run container
-        run: SECRET_KEY=${{ secrets.SECRET_KEY }} docker compose up -d
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        run: SECRET_KEY="$SECRET_KEY" docker compose up -d
