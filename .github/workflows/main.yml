@@ -14,4 +14,6 @@ jobs:
       - name: Run container
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        run: SECRET_KEY="$SECRET_KEY" docker compose up -d
+        run: SECRET_KEY=$SECRET_KEY docker compose up -d
+      - name: test
+        run: echo "$SECRET_KEY"
