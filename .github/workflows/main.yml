@@ -12,4 +12,4 @@ jobs:
       - name: Build image
         run: COMPOSE_BAKE=true docker compose build
       - name: Run container
-        run: ORIGIN=${{ secrets.SECRET_KEY }} docker compose up -d
+        run: SECRET_KEY=${{ secrets.SECRET_KEY }} docker compose up -d
