@@ -7,7 +7,7 @@ class Plant(models.Model):
     room_location = models.CharField(verbose_name="Room Location", max_length=64, null=False)
     image_url = models.CharField(verbose_name="Plant Image URL", max_length=250, null=True)
 
-    DisplayFields = ["plant_name", "room_name", "room_location", "image_url"]
+    DisplayFields = ["id", "plant_name", "room_name", "room_location", "image_url"]
 
     class Meta:
         verbose_name_plural = "Plants"
